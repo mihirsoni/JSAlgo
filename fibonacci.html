@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>
+Testing Fibonacci
+</title>
+</head>
+<body>
+<h1> Testing Fibonacci</h1>
+<input type="text" name="number" id="number"/>
+<input type="submit" name="submit" value="submit" onClick="getFibonacci();"/>
+<br/>
+<span id="result" name = "result">
+</span>
+</body>
+<script type="text/javascript">
+function getFibonacci() {
+	var num = document.getElementById("number").value.trim();	
+	//Check & returns if the number is blank
+	if(isNaN(num)) {
+		alert('Please enter Number');
+		return false;
+	}
+	var fibonacci = [0,1];
+	for(var i = 2; i <= num ; i++) {
+		fibonacci[i] = fibonacci[i-1] + fibonacci[i-2]
+	}
+	document.getElementById("result").innerHTML = "Series is  " + fibonacci;
+}
+</script>
+</html>
