@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>
+Testing Palindrom
+</title>
+</head>
+<body>
+<h1> Testing Plaindrome</h1>
+<input type="text" name="number" id="number"/>
+<input type="submit" name="submit" value="submit" onClick="isPrime();"/>
+<br/>
+<span id="result" name = "result">
+</span>
+</body>
+<script type="text/javascript">
+function isPrime() {
+	var num = document.getElementById("number").value.trim();	
+	if(isNaN(num)) {
+		alert('Please enter Number');
+		return false;
+	}
+	var div=2;
+	if(parseInt(num) % div == 0 && num != div) {
+		alert('Number is not Prime');
+		return false;
+	}
+	for(var i = div+1;i <= num;i++) {
+		if(num % i == 0 && i != num) { 
+			console.log("Number is " + num);
+			console.log("Divisor is " + i);
+			alert('Number is not Prime');
+			return false;
+		}
+	}
+	alert('Number is Prime');
+}
+</script>
+</html>

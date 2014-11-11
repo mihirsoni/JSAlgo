@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>
+Testing Palindrom
+</title>
+</head>
+<body>
+<h1> Testing Plaindrome</h1>
+<input type="text" name="string" id="string"/>
+<input type="submit" name="submit" value="submit" onClick="isPalindrome();"/>
+<br/>
+<span id="result" name = "result">
+</span>
+</body>
+<script type="text/javascript">
+function isPalindrome() {
+	var str = document.getElementById("string").value.trim();	
+	//Check if the string is empty or not?
+	//If emplty retrn back to the program
+	if(str.length == 0) {
+		alert('Please enter value');
+		return false;
+	}
+	for(var i=0; i<str.length; i++) {	
+		if(str[str.length-(i+1)] !== str[i]){
+			document.getElementById('result').innerHTML = "<b>" +  str + "</b>  is not Palindrome";
+			return false;
+		}
+	}
+	document.getElementById('result').innerHTML =  str + " is Palindrome";
+	return true;
+}
+</script>
+</html>
