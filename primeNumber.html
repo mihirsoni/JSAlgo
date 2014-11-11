@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>
-Testing Palindrom
+Testing Prime Number
 </title>
 </head>
 <body>
@@ -15,10 +15,12 @@ Testing Palindrom
 <script type="text/javascript">
 function isPrime() {
 	var num = document.getElementById("number").value.trim();	
+	//Check & returns if the number is blank
 	if(isNaN(num)) {
 		alert('Please enter Number');
 		return false;
 	}
+	//start with 2 and see if Number is dvisiable with 2 then return false
 	var div=2;
 	if(parseInt(num) % div == 0 && num != div) {
 		alert('Number is not Prime');
